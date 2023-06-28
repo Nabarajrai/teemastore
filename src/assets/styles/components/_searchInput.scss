@@ -1,0 +1,44 @@
+@use "../layout/_gridsystem" as *;
+
+.searchInput {
+  padding: 0 7rem;
+  .searchInput-box {
+    @include flex($justify-content: space-between);
+    border: 1px solid #eaeaea;
+    padding: 0.4rem 0.3rem;
+    border-radius: 4rem;
+    position: relative;
+    box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.15);
+
+    &__search {
+      font-size: 1.7rem;
+      align-self: center;
+      color: #a8a8a8;
+      display: flex;
+      padding-left: 1.8rem;
+    }
+    &__input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 0 2rem;
+    }
+    &__label {
+      position: absolute;
+      left: 50px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #a8a8a8;
+      font-weight: 500;
+    }
+    &__icons {
+      display: flex;
+      align-items: stretch;
+      background-color: #0d2235;
+      padding: 1rem;
+      border-radius: 4rem;
+      font-size: 1.7rem;
+      color: #ffff;
+    }
+  }
+}

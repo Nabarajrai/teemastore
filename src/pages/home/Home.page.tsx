@@ -1,14 +1,19 @@
-import React from "react";
-import HeaderComponent from "../../components/header/Header.component";
-import FooterComponent from "../../components/footer/Footer.component";
+import Layout from "../../common/layout/Layout";
 
 const HomePage = () => {
   return (
-    <React.Fragment>
-      <HeaderComponent />
-      Home.page
-      <FooterComponent/>
-    </React.Fragment>
+    <Layout>
+      <div className="wrapper">
+        <div style={{ height: "27vh" }}>
+          <h2>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit
+            temporibus esse velit blanditiis inventore praesentium soluta neque
+            qui illum. Aut a quaerat accusantium veniam neque mollitia repellat
+            deleniti saepe voluptate!
+          </h2>
+        </div>
+      </div>
+    </Layout>
   );
 };
 

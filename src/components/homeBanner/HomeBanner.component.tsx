@@ -2,6 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
+import ButtonComponent from "../../components/button/Button.component";
+import { BUTTON_TYPES } from "../../common/layout/ButtonTypes";
 import img from "../../assets/images/1.png";
 import img1 from "../../assets/images/2.png";
 import img2 from "../../assets/images/3.png";
@@ -37,7 +39,9 @@ const HomeBannerComponent = () => {
                   <p>Design by and sold by Teeme</p>
                 </div>
                 <div className="banner-content__btn">
-                  <button>Shop now</button>
+                  <ButtonComponent buttonType={BUTTON_TYPES.normal}>
+                    Shop Now
+                  </ButtonComponent>
                 </div>
               </div>
             </div>
@@ -59,7 +63,9 @@ const HomeBannerComponent = () => {
                   <p>Design by and sold </p>
                 </div>
                 <div className="banner-content__btn">
-                  <button>Shop now</button>
+                  <ButtonComponent buttonType={BUTTON_TYPES.normal}>
+                    Buy Now
+                  </ButtonComponent>
                 </div>
               </div>
             </div>
@@ -81,7 +87,9 @@ const HomeBannerComponent = () => {
                   <p>Design by and sold by Teeme</p>
                 </div>
                 <div className="banner-content__btn">
-                  <button>Shop now</button>
+                  <ButtonComponent buttonType={BUTTON_TYPES.normal}>
+                    Shop Now
+                  </ButtonComponent>{" "}
                 </div>
               </div>
             </div>

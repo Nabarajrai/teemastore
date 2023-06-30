@@ -1,0 +1,26 @@
+.button-container {
+  padding: 1.5rem 5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  letter-spacing: 0.4px;
+  transition: all 0.45s ease;
+  &.normal {
+    &:hover {
+      background-color: rgb(22, 126, 167);
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+  &.inverted {
+    background-color: #0d2235;
+    color: #ffff;
+    &:hover {
+      background-color: #ffff;
+      color: #0d2235;
+    }
+  }
+}

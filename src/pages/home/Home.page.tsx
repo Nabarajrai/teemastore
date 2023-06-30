@@ -1,8 +1,12 @@
 import Layout from "../../common/layout/Layout";
+import HomeBannerComponent from "../../components/homeBanner/HomeBanner.component";
 
 const HomePage = () => {
   return (
     <Layout>
+      <div className="banner-section">
+        <HomeBannerComponent />
+      </div>
       <div className="wrapper">
         <div style={{ height: "27vh" }}>
           <h2>

@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import img from "../../assets/images/1.png";
 import img1 from "../../assets/images/2.png";
 import img2 from "../../assets/images/3.png";
@@ -12,12 +12,13 @@ const HomeBannerComponent = () => {
       <Swiper
         slidesPerView={1}
         centeredSlides={true}
+        pagination={{ clickable: true }}
         speed={1000}
         autoplay={{
           delay: 4500,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]}
+        modules={[Autoplay, Pagination]}
         className="myswiper"
       >
         <SwiperSlide>
@@ -51,11 +52,11 @@ const HomeBannerComponent = () => {
               <div className="banner-content">
                 <div className="banner-content__title">
                   <h1>
-                    <span>Special colletion</span> Get Evaluations
+                    <span>Mens collections</span> Get Evaluations
                   </h1>
                 </div>
                 <div className="banner-content__des">
-                  <p>Design by and sold by Teeme</p>
+                  <p>Design by and sold </p>
                 </div>
                 <div className="banner-content__btn">
                   <button>Shop now</button>

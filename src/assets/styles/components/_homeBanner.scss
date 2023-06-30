@@ -57,3 +57,12 @@
     }
   }
 }
+.swiper-pagination-bullet {
+  padding: 0.6rem;
+  border: 3px solid #ffffff;
+  background: #a6a8b1;
+  margin-top: -4rem;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: 92%;
+}

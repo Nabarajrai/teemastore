@@ -36,7 +36,7 @@ const HomeBannerComponent = () => {
                   <p>Design by and sold by Teeme</p>
                 </div>
                 <div className="banner-content__btn">
-                  <button>Shop-now</button>
+                  <button>Shop now</button>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ const HomeBannerComponent = () => {
                   <p>Design by and sold by Teeme</p>
                 </div>
                 <div className="banner-content__btn">
-                  <button>Shop-now</button>
+                  <button>Shop now</button>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ const HomeBannerComponent = () => {
                   <p>Design by and sold by Teeme</p>
                 </div>
                 <div className="banner-content__btn">
-                  <button>Shop-now</button>
+                  <button>Shop now</button>
                 </div>
               </div>
             </div>

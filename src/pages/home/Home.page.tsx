@@ -8,7 +8,7 @@ const HomePage = () => {
         <HomeBannerComponent />
       </div>
       <div className="wrapper">
-        <div style={{ height: "27vh" }}>
+        <div style={{ height: "27vh", background: "red" }}>
           <h2>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit
             temporibus esse velit blanditiis inventore praesentium soluta neque

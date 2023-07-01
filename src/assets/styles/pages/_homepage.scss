@@ -13,3 +13,26 @@
   font-weight: 700;
   padding: 3rem 0px;
 }
+.dellivery-section{
+  padding: 5rem 0px;
+}
+.delivery-card {
+  @include flex($justify-content: space-between);
+}
+.delivery-description {
+  overflow: hidden;
+  position: relative;
+}
+.delivery-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1.4s ease;
+  padding: 4rem 0px;
+}
+.deliery-cta {
+  position: absolute;
+  top: 79%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -64,9 +64,7 @@ const HomePage = () => {
             {deliveryIfno.map(delivery => (
               <DeliveryComponent
                 key={delivery.id}
-                title={delivery.title}
-                description={delivery.description}
-                img={delivery.img}
+                category={delivery}
               />
             ))}
           </div>

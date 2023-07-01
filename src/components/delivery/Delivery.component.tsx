@@ -1,12 +1,15 @@
 import { AiOutlineRight } from "react-icons/ai";
-
+type deliveryProps = {
+  category: delivery;
+};
 interface delivery {
   title: string;
   description: string;
   img: string;
 }
 
-const DeliveryComponent = ({ title, description, img }: delivery) => {
+const DeliveryComponent: React.FC<deliveryProps> = ({ category }) => {
+  const { title, description, img } = category;
   return (
     <div className="delivery-container">
       <div className="delivery-content">

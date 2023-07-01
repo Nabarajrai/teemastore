@@ -52,8 +52,8 @@ const HomePage = () => {
         <div className="wrapper">
           <h2 className="category-title">Shop by category</h2>
           <div className="category-list">
-            {categorys.map(category => (
-              <CategoryComponent name={category} />
+            {categorys.map((category, i) => (
+              <CategoryComponent key={i} name={category} />
             ))}
           </div>
         </div>
@@ -62,7 +62,12 @@ const HomePage = () => {
         <div className="wrapper">
           <div className="delivery-card">
             {deliveryIfno.map(delivery => (
-              <DeliveryComponent key={delivery.id} deliInfos={delivery} />
+              <DeliveryComponent
+                key={delivery.id}
+                title={delivery.title}
+                description={delivery.description}
+                img={delivery.img}
+              />
             ))}
           </div>
           <div className="delivery-description">

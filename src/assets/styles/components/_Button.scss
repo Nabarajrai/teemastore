@@ -16,11 +16,15 @@
     }
   }
   &.inverted {
+    padding: 1.2rem 5rem;
+    font-size: 1.1rem;
     background-color: #0d2235;
     color: #ffff;
+    width: 100%;
     &:hover {
-      background-color: #ffff;
-      color: #0d2235;
+      background-color: #0c70ce;
+      color: #ffff;
+      cursor: pointer;
     }
   }
 }

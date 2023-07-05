@@ -13,8 +13,8 @@
   font-weight: 700;
   padding: 3rem 0px;
 }
-.dellivery-section{
-  padding: 5rem 0px;
+.dellivery-section {
+  padding-top: 5rem;
 }
 .delivery-card {
   @include flex($justify-content: space-between);
@@ -35,4 +35,20 @@
   top: 79%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.customer-favorites {
+  padding-bottom: 5rem;
+}
+
+.cutomer-title {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3rem 0px;
+  text-align: center;
+  padding-bottom: 0.8rem;
+}
+.customer-cards {
+  @include flex($justify-content: space-between);
+  flex-wrap: wrap;
 }

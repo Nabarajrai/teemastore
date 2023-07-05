@@ -3,9 +3,11 @@ import Layout from "../../common/layout/Layout";
 import HomeBannerComponent from "../../components/homeBanner/HomeBanner.component";
 import CategoryComponent from "../../components/category/Category.component";
 import { fetchAllProuducts } from "../../services/api";
+import { getAllProducts } from "../../services/api";
 import ButtonComponent from "../../components/button/Button.component";
 import { BUTTON_TYPES } from "../../common/layout/ButtonTypes";
 import DeliveryComponent from "../../components/delivery/Delivery.component";
+import CartComponent from "../../components/cart/Cart.component";
 import truck from "../../assets/images/truck.png";
 import home from "../../assets/images/home.png";
 import time from "../../assets/images/time.png";
@@ -36,12 +38,20 @@ const deliveryIfno = [
 
 const HomePage = () => {
   const [categorys, setCategorys] = useState([]);
+  const [products, setProducts] = useState([]);
+
   const category = async () => {
     const response = await fetchAllProuducts();
     setCategorys(response.data);
   };
+  const productes = async () => {
+    const response = await getAllProducts();
+    setProducts(response.data);
+    console.log(response.data);
+  };
   useEffect(() => {
     category();
+    productes();
   }, []);
   return (
     <Layout>
@@ -62,12 +72,7 @@ const HomePage = () => {
         <div className="wrapper">
           <div className="delivery-card">
             {deliveryIfno.map(delivery => (
-              <DeliveryComponent
-                key={delivery.id}
-                title={delivery.title}
-                description={delivery.description}
-                img={delivery.img}
-              />
+              <DeliveryComponent key={delivery.id} category={delivery} />
             ))}
           </div>
           <div className="delivery-description">
@@ -79,6 +84,20 @@ const HomePage = () => {
                 Kids tees
               </ButtonComponent>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="customer-favorites">
+        <div className="wrapper">
+          <div className="cutomer-title">
+            <h2>Customer Favorites</h2>
+          </div>
+          <div className="customer-cards">
+            {products.map((product, i) => (
+              <div key={i}>
+                <CartComponent products={product} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

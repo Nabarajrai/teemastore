@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { memo } from "react";
 
 import img from "../../assets/images/5.jpg";
@@ -18,4 +19,5 @@ const CategoryComponent = ({ name }: categoryProps) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default memo(CategoryComponent);

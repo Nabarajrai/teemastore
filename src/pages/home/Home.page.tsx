@@ -8,10 +8,16 @@ import ButtonComponent from "../../components/button/Button.component";
 import { BUTTON_TYPES } from "../../common/layout/ButtonTypes";
 import DeliveryComponent from "../../components/delivery/Delivery.component";
 import CartComponent from "../../components/cart/Cart.component";
+import { LimitProducts } from "../../context/allProducts/Allproduct.context";
+import SubscribeComponent from "../../components/subscribe/Subscribe.component";
 import truck from "../../assets/images/truck.png";
 import home from "../../assets/images/home.png";
 import time from "../../assets/images/time.png";
 import kids from "../../assets/images/kids.png";
+import brand from "../../assets/images/brand.png";
+import brand2 from "../../assets/images/brand2.png";
+import brand3 from "../../assets/images/brand3.png";
+import brand4 from "../../assets/images/brand4.png";
 
 const deliveryIfno = [
   {
@@ -39,20 +45,37 @@ const deliveryIfno = [
 const HomePage = () => {
   const [categorys, setCategorys] = useState([]);
   const [products, setProducts] = useState([]);
+  const [number, setNumber] = useState<number>(8);
 
   const category = async () => {
     const response = await fetchAllProuducts();
     setCategorys(response.data);
   };
+
   const productes = async () => {
-    const response = await getAllProducts();
+    const response = await getAllProducts(number);
     setProducts(response.data);
-    console.log(response.data);
   };
+
+  useEffect(() => {
+    productes();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [number]);
+
   useEffect(() => {
     category();
-    productes();
   }, []);
+
+  const length = LimitProducts();
+
+  const handleLimit = () => {
+    if (length == productes.length) {
+      return;
+    } else {
+      setNumber(number + 8);
+    }
+  };
+
   return (
     <Layout>
       <div className="banner-section">
@@ -99,7 +122,52 @@ const HomePage = () => {
               </div>
             ))}
           </div>
+          <div className="customer-loads">
+            <div className="customer-loads__des">
+              <p>
+                Showing {products.length} of {length} products
+              </p>
+            </div>
+            <div className="customer-loads__btn">
+              <ButtonComponent
+                buttonType={BUTTON_TYPES.normal}
+                onClick={handleLimit}
+              >
+                Load more !
+              </ButtonComponent>
+            </div>
+          </div>
         </div>
+      </div>
+      <div className="brands">
+        <div className="wrapper">
+          <div className="brands-title">
+            <h3>Brands we love</h3>
+          </div>
+          <div className="brands-lists">
+            <div className="brands-lists__img">
+              <img src={brand} alt="" />
+            </div>
+            <div className="brands-lists__img">
+              <img src={brand2} alt="" />
+            </div>
+            <div className="brands-lists__img">
+              <img src={brand3} alt="" />
+            </div>
+            <div className="brands-lists__img">
+              <img src={brand4} alt="" />
+            </div>
+            <div className="brands-lists__img">
+              <img src={brand} alt="" />
+            </div>
+            <div className="brands-lists__img">
+              <img src={brand2} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="emails">
+        <SubscribeComponent />
       </div>
     </Layout>
   );

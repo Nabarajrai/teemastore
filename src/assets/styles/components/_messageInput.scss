@@ -1,27 +1,21 @@
 @use "../layout/_gridsystem" as *;
 
-.searchInput {
+.messageInput {
   padding: 0 7rem;
-  .searchInput-box {
+  .messageInput-box {
     @include flex($justify-content: space-between);
     border: 1px solid #eaeaea;
     padding: 0.4rem 0.3rem;
     border-radius: 4rem;
     position: relative;
     box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.15);
-    &:hover {
-      cursor: pointer;
-      .searchInput-box__label {
-        display: none;
-      }
-    }
 
     &__search {
       font-size: 1.7rem;
       align-self: center;
-      color: #a8a8a8;
       display: flex;
       padding-left: 1.8rem;
+      color: #0d2235;
     }
     &__input {
       flex: 1;
@@ -30,18 +24,12 @@
       padding: 0 2rem;
       color: #a8a8a8;
       &::placeholder {
-        font-size: 1.1rem;
         color: #a8a8a8;
-      }
-      &:focus {
-        .searchInput-box__label {
-          display: none;
-        }
       }
     }
     &__label {
       position: absolute;
-      left: 60px;
+      left: 50px;
       font-size: 1rem;
       text-transform: uppercase;
       color: #a8a8a8;
@@ -55,6 +43,21 @@
       border-radius: 4rem;
       font-size: 1.7rem;
       color: #ffff;
+      transition: all 0.45s ease;
+      &:hover {
+        background-color: #167bd3;
+        cursor: pointer;
+      }
+      &--btn {
+        background: transparent;
+        color: #ffff;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 0.3rem 3rem;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
     }
   }
 }

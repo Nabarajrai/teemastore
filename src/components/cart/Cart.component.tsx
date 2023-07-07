@@ -1,5 +1,8 @@
+/* eslint-disable prefer-const */
 import ButtonComponent from "../button/Button.component";
 import { BUTTON_TYPES } from "../../common/layout/ButtonTypes";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { AiOutlineStar } from "react-icons/ai";
 
 type cartProps = {
   products: productsTypes;
@@ -11,17 +14,26 @@ interface productsTypes {
   description: string;
   image: string;
   price: number;
-  rating: ratingTypes;
+  rating: { rate: number; count: number };
   title: string;
-}
-
-interface ratingTypes {
-  rate?: number;
-  cout?: number;
 }
 
 const CartComponent: React.FC<cartProps> = ({ products }) => {
   const { image, title, price, rating } = products;
+  const ratingStar = Array.from({ length: 5 }, (_, index) => {
+    let number = index + 0.5;
+    return (
+      <span className="star-key" key={index}>
+        {rating.rate >= index + 1 ? (
+          <FaStar className="star" />
+        ) : rating.rate >= number ? (
+          <FaStarHalfAlt className="star" />
+        ) : (
+          <AiOutlineStar className="starfa" />
+        )}
+      </span>
+    );
+  });
   return (
     <div className="carts-container">
       <div className="carts">
@@ -33,7 +45,8 @@ const CartComponent: React.FC<cartProps> = ({ products }) => {
             <h3>{title.slice(0, 30)}...</h3>
           </div>
           <div className="carts__des--rate">
-            <span>{rating.rate} reviews</span>
+            <div className="star-section"> {ratingStar}</div>
+            <span style={{ marginLeft: "1rem" }}>{rating.count} reviews</span>
           </div>
           <div className="carts__des--price">
             <span>${price}</span>
